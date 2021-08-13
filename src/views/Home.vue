@@ -3,13 +3,13 @@
     <h1>Welcome to {{ title2 }}!</h1>
     <input type="text" v-model="input1" />
     <!-- 기존에는 input의 value에 해당되는 값으로 데이터를 바인딩했지만, vue에서는 v-model을 통해 데이터를 바인딩하고 처리 -->
-    <button type="button" @click="getData">
+    <button @click="getData">
       {{ input1 }}
     </button>
     <!-- 기존에는 onclick을 이용하여 클릭 이벤트를 바인딩했지만, vue에서는 @click -->
-    <button type="button" @click="setData">Set</button>
+    <button @click="setData">Set</button>
 
-    <select class="form-control" v-model="region" @change="changeRegion">
+    <select v-model="region" @change="changeRegion">
       <!-- select v-model에 region을 설정함으로써 "제주"가 기본값이 됨 -->
       <!-- v-for를 통해 배열을 돌릴 수 있다 -->
       <!-- 첫번째 인자 d: data -->
@@ -22,7 +22,7 @@
       }}</option>
     </select>
 
-    <table class="table table-bordered" v-if="tableShow">
+    <table v-if="tableShow">
       <!-- v-if : 해당 조건이 만족되면 실행. boolean값을 담아 조건부렌더링 가능 -->
       <!-- v-show : 해당 조건이 만족되면 show. 렌더링은 함. 단 DOM은 그대로 살아있음. display:none -->
       <tr :key="index" v-for="(data, index) in options">
