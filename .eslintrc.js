@@ -1,16 +1,12 @@
 module.exports = {
-  root: true, // 현재 eslintrc 파일을 기준을로 ESLint 규칙 적용
+  root: true, // 현재 eslintrc 파일을 기준으로 ESLint 규칙 적용. 현재 디렉토리보다 부모 디렉토리의 eslintrc는 무시됨
   env: {
     node: true,
   },
   parserOptions: {
     parser: 'babel-eslint',
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:vue/essential',
-  ],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:vue/essential'],
   rules: {
     'vue/no-unused-components': 'warn',
     'vue/no-unused-vars': 'warn',
@@ -25,8 +21,9 @@ module.exports = {
         singleQuote: true,
         semi: true,
         arrowParens: 'avoid',
-        endOfLine: 'lf',
-        trailingComma: true,
+        endOfLine: 'auto',
+        trailingComma: 'all',
+        printWidth: 100,
       },
     ],
   },
