@@ -1,12 +1,16 @@
 module.exports = {
   root: true, // 현재 eslintrc 파일을 기준을로 ESLint 규칙 적용
   env: {
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
-  extends: ['eslint:recommended', 'plugin:vue/essential'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:vue/essential',
+  ],
   rules: {
     'vue/no-unused-components': 'warn',
     'vue/no-unused-vars': 'warn',
@@ -21,8 +25,9 @@ module.exports = {
         singleQuote: true,
         semi: true,
         arrowParens: 'avoid',
-        endOfLine: 'lf'
-      }
-    ]
-  }
+        endOfLine: 'lf',
+        trailingComma: true,
+      },
+    ],
+  },
 };
